@@ -1,0 +1,81 @@
+public class Veiculo {
+    private String marca;
+    private String modelo;
+    private int ano;
+    private double km;
+    private boolean disponivel;
+
+    public String getMarca() {
+        return this.marca;
+    }
+
+    public void setMarca(String marca00) {
+        this.marca = marca00;
+    }
+
+    public String getModelo() {
+        return this.modelo;
+    }
+
+    public void setModelo(String modelo00) {
+        this.modelo = modelo00;
+    }
+
+    public int getAno() {
+        return this.ano;
+    }
+
+    public void setAno(int ano00) {
+        this.ano = ano00;
+    }
+
+    public double getKm() {
+        return this.km;
+    }
+
+    public void setKm(double km00) {
+        this.km = km00;
+    }
+
+    public boolean getDisponivel() {
+        return this.disponivel;
+    }
+
+    public void setDisponivel(boolean disponivel00) {
+        this.disponivel = disponivel00;
+    }
+
+    public int calcularIdade() {
+        int anoAtual = 2026;
+        int idade = anoAtual - this.ano;
+        return idade;
+    }
+
+    public boolean realizarLocacao() {
+        if (this.disponivel) {
+            this.disponivel = false;
+            System.out.println("Automóvel disponivel!!");
+            return true;
+        } else {
+            System.out.println("Automóvel indisponivel!!");
+            return false;
+        }
+    }
+
+    public boolean devolverVeiculo() {
+        this.disponivel = true;
+        System.out.println("Automóvel disponivel!!");
+        return true;
+    }
+
+    public void exibirDados() {
+        System.out.println("-------------------------------");
+        System.out.println("--------DADOS DO VEICULO-------");
+        System.out.println("\nMarca: " + this.marca);
+        System.out.println("\nModelo: " + this.modelo);
+        System.out.println("\nAno: " + this.ano);
+        System.out.println("\nQuilometragem: " + this.km + "km");
+        System.out.println("\nIdade: " + this.calcularIdade() + " anos");
+        System.out.println("-------------------------------");
+    }
+}
